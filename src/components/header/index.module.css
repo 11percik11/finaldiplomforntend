@@ -1,0 +1,93 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    padding: 10px 20px;
+    flex-wrap: wrap; /* Позволяет переносить элементы на новые строки на маленьких экранах */
+  }
+  
+  .logo {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 10px; /* Отступ снизу для мобильных экранов */
+  }
+  
+  .searchContainer {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px; /* Отступ снизу для мобильных экранов */
+  }
+  
+  .searchInput {
+    width: 100%;
+    max-width: 300px; /* Максимальная ширина для ввода поиска */
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+  }
+  
+  .navButtons {
+    display: flex;
+    flex-wrap: wrap; /* Позволяет кнопкам переноситься на новые строки */
+    gap: 10px;
+    justify-content: center; /* Центрируем кнопки на мобильных устройствах */
+  }
+  
+  .button {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .button:hover {
+    background-color: grey;
+  }
+  
+  /* Адаптивные стили для планшетов и выше */
+  @media (min-width: 768px) {
+    .header {
+      padding: 20px 40px; /* Увеличиваем отступы для больших экранов */
+    }
+  
+    .navButtons {
+      gap: 20px; /* Увеличиваем расстояние между кнопками */
+    }
+  }
+  
+  /* Адаптивные стили для мобильных устройств */
+  @media (max-width: 767px) {
+    .header {
+      flex-direction: column; /* Располагаем элементы в колонку на маленьких экранах */
+      align-items: center; /* Центрируем элементы */
+    }
+  
+    .logo {
+      margin-bottom: 10px; /* Добавляем отступ снизу для логотипа */
+    }
+  
+    .searchContainer {
+      width: 100%; /* Контейнер поиска занимает всю ширину */
+      margin-bottom: 10px;
+    }
+  
+    .searchInput {
+      width: 90%; /* Ввод поиска занимает почти всю ширину */
+      max-width: none;
+    }
+  
+    .navButtons {
+      flex-direction: column; /* Размещаем кнопки в колонку */
+      align-items: center; /* Центрируем кнопки */
+    }
+  
+    .button {
+      width: 100%; /* Кнопки занимают всю ширину на мобильных устройствах */
+    }
+  }
+  

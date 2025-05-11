@@ -1,0 +1,115 @@
+/* index.module.css */
+
+.container {
+    display: flex;
+    align-items: center;
+    padding: 20px 20px;
+    background-color: #f5f5f5;
+
+  }
+  
+  .section {
+    width: 100%;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    width: 400px;
+    height: 400px; 
+  }
+
+  .sectionBox{
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .imageContainer {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    /* width: 450px; */
+    height: 150px;
+    max-height: 100px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #eee;
+  }
+  
+  .imageContainer img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+  
+  .details {
+    flex-grow: 1;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-between; */
+    padding: 0 20px;
+  }
+  
+  .details p {
+    margin: 5px 0;
+  }
+  
+  .inputFail {
+    margin-top: 10px;
+  }
+  
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .buttonGroup {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  
+  .buttonGroup button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .buttonGroup button:hover {
+    background-color: #0056b3;
+  }
+
+  .pen {
+    cursor: pointer;
+  }
+
+  .CiSettings {
+    display: flex;
+    cursor: pointer;
+    background-color: #eee8e8;
+    margin: 10px 0;
+    padding: 5px;
+  }
+
+  .CiSettings:hover {
+    background-color: #c2c4c7;
+    transition: 0.4s;
+  }
+
+  .CiSettingsSvg {
+    height: 25px;
+    width: 25px;
+  }
+
+  .SvgMarg {
+    margin: 0 0 0 10px;
+  }
+
+  .pen:hover {
+    color: #151865
+  }
+  

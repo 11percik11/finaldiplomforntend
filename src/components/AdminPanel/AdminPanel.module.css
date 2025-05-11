@@ -1,0 +1,170 @@
+.adminPanel {
+    font-family: Arial, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .tabs {
+    display: flex;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+  }
+  
+  .tab {
+    padding: 10px 20px;
+    color: #333;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+  }
+  
+  .tab:hover {
+    background-color: #f5f5f5;
+  }
+  
+  .tab.active {
+    border-bottom: 3px solid #007bff;
+    /* font-weight: bold; */
+    color: #007bff;
+  }
+  
+  .tabContent {
+    padding: 20px 0;
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .table th, .table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .table th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+  }
+  
+  .table tr:hover {
+    background-color: #f5f5f5;
+  }
+  
+  .commentControls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .input {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    flex-grow: 1;
+    max-width: 300px;
+  }
+  
+  .fetchButton {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .fetchButton:hover {
+    background-color: #0056b3;
+  }
+  
+  .fetchButton:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+  
+  .currentProductId {
+    margin-bottom: 15px;
+    font-style: italic;
+    color: #666;
+  }
+
+  .actionsCell {
+    position: relative;
+    width: 50px;
+  }
+  
+  .menuContainer {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .menuButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 0 10px;
+    color: #666;
+  }
+  
+  .menuButton:hover {
+    color: #333;
+  }
+  
+  .menu {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background: rgb(124, 124, 124);
+    /* border: 1px solid rgb(124, 124, 124); */
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    min-width: 100px;
+  }
+  
+  .menu button {
+    padding: 8px 12px;
+    text-align: left;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .menu button:hover {
+    background-color: #cabfbf;
+  }
+
+  .productImg {
+    height: 50px;
+  }
+  
+  .modelEdit {
+    position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  }
+
+  .modelEdit__container {
+    background-color: #FFFFFF;
+    width: 600px;
+    padding: 20px;
+  }

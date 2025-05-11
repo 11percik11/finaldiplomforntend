@@ -1,0 +1,79 @@
+.footer {
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    flex-direction: column; /* Колонка по умолчанию для мобильных устройств */
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .footerSection {
+    margin-bottom: 20px; /* Отступ между секциями */
+  }
+  
+  .footerTitle {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .footerSubtitle {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .footerLink {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .footerLink:hover {
+    text-decoration: underline;
+  }
+  
+  .footerText {
+    margin: 5px 0;
+    font-size: 14px;
+  }
+  
+  .socialIcons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .socialIcon {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .socialIcon:hover {
+    text-decoration: underline;
+  }
+  
+  /* Адаптивные стили для планшетов и выше */
+  @media (min-width: 1038px) {
+    .footer {
+      flex-direction: row; /* Горизонтальная компоновка на больших экранах */
+      justify-content: space-between;
+      padding: 40px;
+    }
+  
+    .footerSection {
+      margin-bottom: 0; /* Убираем отступ между секциями */
+      flex: 1; /* Секции равномерно распределяются */
+      padding: 0 20px;
+    }
+  
+    .footerTitle {
+      font-size: 24px;
+    }
+  
+    .footerSubtitle {
+      font-size: 18px;
+    }
+  }
+  

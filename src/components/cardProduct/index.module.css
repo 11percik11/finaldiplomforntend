@@ -1,0 +1,106 @@
+/* index.module.css */
+
+.productCard {
+  max-width: 220px;
+  border: 1px solid #2d3748;
+  border-radius: 10px;
+  padding: 1.2rem;
+  text-align: center;
+  background: #1a202c;
+  margin: 1rem;
+  flex: 1 0 21%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.productCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.productCard .imageContainer {
+  width: 100%;
+  height: 160px;
+  overflow: hidden;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  border: 1px solid #2d3748;
+  background: #2d3748;
+}
+
+.productCard img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.productCard:hover img {
+  transform: scale(1.03);
+}
+
+.productCard .price {
+  font-size: 1.4rem;
+  color: #ffffff;
+  font-weight: 600;
+  margin: 0.5rem 0;
+}
+
+.productCard button {
+  background-color: #3182ce;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  width: 100%;
+  margin-top: 0.8rem;
+  transition: background-color 0.2s ease;
+}
+
+.productCard button:hover {
+  background-color: #2b6cb0;
+}
+
+.h3 {
+  color: #ffffff;
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 0.2s ease;
+}
+
+.h3:hover {
+  color: #63b3ed;
+}
+
+.divP2 {
+  color: #a0aec0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  height: 40px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  white-space: normal;
+  margin: 0.5rem 0;
+}
+
+.boxIntormation {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.price {
+  text-decoration: underline
+}
+
+.imageContainer {
+  cursor: pointer;
+}
