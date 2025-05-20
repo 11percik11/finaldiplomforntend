@@ -1,38 +1,30 @@
-// export type User = {
-//   id: string;
-//   password: string;
-//   email: string;
-//   name: string;
-//   createdAt: Date;
-//   updatedAt: Date;
-// };
-
+export type UserRole = 'ADMIN' | 'MANAGER' | 'CLIENT';
 
 export type User = {
   id: string;
   password: string;
   email: string;
   name: string;
-  phone: string;
+  phone?: string;
   role: UserRole;
   avatarUrl?: string;
-
   refreshToken: string;
   isActivated: boolean;
   activatedLink: string;
-  
+
   createdAt: Date;
   updatedAt: Date;
+
   products: Product[];
   likes: Like[];
   comments: Comment[];
   chats: Chat[];
   userChats: UserChat[];
   messages: Message[];
-  cart?: Cart; // Optional, as a user might not have a cart
+  cart?: Cart;
+  orders: Order[];
+  purchasedProducts: string[]; // массив ID товаров
 };
-
-export type UserRole = 'ADMIN' | 'MANAGER' | 'CLIENT';
 
 export type Product = {
   id: string;
@@ -40,12 +32,22 @@ export type Product = {
   description: string;
   price: number;
   avatarUrl?: string;
+
   likes: Like[];
   comments: Comment[];
   userId: string;
   user: User;
   cartItems: CartItem[];
   createdAt: Date;
+
+  quantity: number;
+  color?: string;
+  sex?: string;
+  model?: string;
+  size?: string;
+  age?: string;
+
+  orderItems: OrderItem[];
 };
 
 export type Comment = {
@@ -55,6 +57,7 @@ export type Comment = {
   user: User;
   productId: string;
   product: Product;
+  visible: boolean;
 };
 
 export type Like = {
@@ -71,8 +74,8 @@ export type Chat = {
   messages: Message[];
   createdAt: Date;
   updatedAt: Date;
-  userId?: string; // Optional, as not all chats may be associated with a specific user
-  user?: User; // Optional, as not all chats may be associated with a specific user
+  userId?: string;
+  user?: User;
 };
 
 export type UserChat = {
@@ -112,4 +115,24 @@ export type CartItem = {
   quantity: number;
   createdAt: Date;
   updatedAt: Date;
+};
+
+export type Order = {
+  id: string;
+  userId: string;
+  user: User;
+  items: OrderItem[];
+  totalPrice: number;
+  status: string; // pending | shipped | delivered
+  createdAt: Date;
+  updatedAt: Date;
+};
+
+export type OrderItem = {
+  id: string;
+  orderId: string;
+  order: Order;
+  productId: string;
+  product: Product;
+  quantity: number;
 };

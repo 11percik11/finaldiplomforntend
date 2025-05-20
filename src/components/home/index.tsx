@@ -1,38 +1,44 @@
-import React from "react";
-import styles from "./index.module.css";
-import { useGetAllProductQuery } from "../../app/productApi";
-import ProductCard from "../cardProduct";
-
-// interface Product {
-//   id: string;
-//   title: string;
-//   price: number;
-//   description: string;
-//   avatarUrl: string;
-//   likes: any[]; // Массив лайков (уточните тип при необходимости)
-//   comments: any[]; // Массив комментариев (уточните тип при необходимости)
-// }
+import React, { useEffect } from "react"
+import styles from "./index.module.css"
+import { useGetAllProductQuery } from "../../app/productApi"
+import ProductCard from "../cardProduct"
+import { useDispatch, useSelector } from "react-redux"
+import { RootState } from "../../app/store"
+import { setProducts } from "../productSlice"
 
 const Home: React.FC = () => {
-  const { data } = useGetAllProductQuery();
-  console.log(data);
+  const dispatch = useDispatch()
+  const products = useSelector((state: RootState) => state.product.list)
+
+  const { data, isSuccess, isLoading } = useGetAllProductQuery({})
+
+  useEffect(() => {
+    if (isSuccess && products.length === 0) {
+      dispatch(setProducts(data.map((p: any) => p.product ?? p)))
+    }
+  }, [isSuccess, data, dispatch])
+
+  // console.log(data)
+  // console.log(products)
+if (isLoading) {
+  return <div className={styles.loading}>Загрузка...</div>
+}
+
 
   return (
     <div className={styles.layout}>
       <div className={styles.productList}>
-        {data && data.length > 0 ? (
-          data.map((product: any) => (
-            <>
-              
-              <ProductCard key={product.id} product={product} />
-            </>
-          ))
+        {products.length > 0 ? (
+          products.map((entry: any) => {
+            const product = entry.product ?? entry
+            return <ProductCard key={product.id} product={product} />
+          })
         ) : (
-          <p>No products available</p>
+          <p>Нет товара</p>
         )}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

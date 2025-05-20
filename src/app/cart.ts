@@ -28,6 +28,14 @@ export const cartApi = api.injectEndpoints({
         body: data,
       }),
     }),
+    updateQuantity: builder.mutation<Cart, { productId: string; action: 'increment' | 'decrement' }>({
+  query: ({ productId, action }) => ({
+    url: '/cart/update-quantity',
+    method: 'PUT',
+    body: { productId, action },
+  }),
+}),
+
   }),
 });
 
@@ -36,6 +44,7 @@ export const {
   useLazyGetCartQuery,
   useAddToCartMutation,
   useRemoveFromCartMutation,
+  useUpdateQuantityMutation,
 } = cartApi;
 
 export const {
@@ -43,5 +52,6 @@ export const {
     getCart,
     addToCart,
     removeFromCart,
+    updateQuantity,
   },
 } = cartApi;

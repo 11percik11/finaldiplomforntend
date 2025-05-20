@@ -1,191 +1,190 @@
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-  background-color: #f5f5f5;
+.pageContainer {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem;
 }
 
-.productSection {
+.productCard {
   display: flex;
-  justify-content: space-between;
-  width: 100%;
-  max-width: 1300px;
-  background-color: #ffffff;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 20px;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.imageContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 30%;
-  height: 350px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+  flex-direction: row;
+  gap: 2rem;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  background-color: #eee;
-  margin-right: 20px;
+  padding: 1rem;
 }
 
-.imageContainer img {
-  max-width: 100%;
-  max-height: 100%;
-}
-
-.productDetails {
+.imageBox {
   flex: 1;
-  margin-right: 20px;
-}
-
-.productTitle,
-.productDescription,
-.sellerLabel,
-.priceSection p {
-  margin: 10px;
-  font-size: 16px;
-}
-
-.sellerInfo {
   display: flex;
+  justify-content: center;
   align-items: center;
+  max-width: 300px;
 }
 
-.avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  margin-right: 10px;
-  object-fit: cover;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+.imageBox img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
 }
 
-.userName {
-  font-weight: bold;
-  font-size: 16px;
-}
-
-.priceSection {
+.detailsBox {
+  flex: 2;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  gap: 1rem;
 }
 
-.addToCartButton {
-  padding: 10px 20px;
+.headerRow {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cartButton {
+  padding: 0.75rem 1.5rem;
+  background-color: #5b9df9;
+  color: white;
   border: none;
-  border-radius: 8px;
-  background-color: #007bff;
-  color: #fff;
+  border-radius: 6px;
+  font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-.addToCartButton:hover {
-  background-color: #0056b3;
+.cartButton:hover {
+  background-color: #407fd9;
+}
+
+.infoBlock p {
+  margin: 0.25rem 0;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.productTitle {
+  font-size: 1.5rem;
+  margin: 0;
+  color: #222;
+}
+
+.likeWrapper {
+  margin-top: auto;
+}
+
+.likeButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
 }
 
 .commentsSection {
-  width: 100%;
-  max-width: 1300px;
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  max-height: 500px; /* Set a maximum height */
-  overflow-y: auto; /* Enable vertical scrolling if content exceeds max-height */
+  margin-top: 2rem;
 }
 
-.comment {
-  background-color: #fff;
-  padding: 15px;
-  margin-bottom: 15px;
-  border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+.commentCard {
+  background-color: #f9f9f9;
+  padding: 1rem;
+  border-radius: 6px;
+  margin-top: 1rem;
 }
 
 .commentHeader {
   display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-    justify-content: space-between;
+  justify-content: space-between;
+  align-items: center;
 }
 
-
-.userInfo {
+.commentUser {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-.userName {
-  font-weight: bold;
-  font-size: 14px;
-  margin: 0;
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
-.commentText {
-  font-size: 14px;
-  line-height: 1.4;
-}
-
-.noComments {
-  text-align: center;
-  color: #888;
-  font-size: 14px;
-}
-
-.loading,
-.error {
-  text-align: center;
-  font-size: 18px;
-  color: #888;
-  margin: 20px 0;
-}
-
-.menuWrapper {
+.commentMenu {
   position: relative;
 }
 
-.menuIcon {
-  cursor: pointer;
-}
-
-.dropdownMenu {
+.dropdown {
   position: absolute;
+  top: 100%;
   right: 0;
-  top: 20px;
-  background-color: rgb(0, 0, 0);
+  background: white;
   border: 1px solid #ccc;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  padding: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   z-index: 10;
 }
 
-.dropdownMenu button {
+.dropdown button {
   display: block;
   width: 100%;
-  padding: 10px 15px;
   background: none;
   border: none;
+  padding: 0.5rem 1rem;
   text-align: left;
   cursor: pointer;
 }
 
-.dropdownMenu button:hover {
-  background-color: #6f6f6f;
+.commentEdit input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
 }
 
-.divBoxImgName {
-  display: flex;
-  align-items: center;
+.commentEdit button {
+  padding: 0.5rem 1rem;
+  background-color: #5b9df9;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.commentText {
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .productCard {
+    flex-direction: column;
+  }
+
+  .imageBox {
+    max-width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .detailsBox {
+    gap: 0.75rem;
+  }
+
+  .cartButton {
+    width: 100%;
+    text-align: center;
+  }
+
+  .commentHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .commentUser {
+    flex-direction: row;
+  }
 }

@@ -2,42 +2,51 @@ import React from "react";
 import styles from "./index.module.css";
 import { BASE_URL } from "../../constants";
 import { useNavigate } from "react-router-dom";
-import { useAddToCartMutation} from "../../app/cart";
+import { useAddToCartMutation } from "../../app/cart";
 
 const ProductCard = ({ product }: any) => {
   const navigate = useNavigate();
-  const [addToCart] = useAddToCartMutation(); // Use the mutation hook
+  const [addToCart] = useAddToCartMutation();
+  const [isAdded, setIsAdded] = React.useState(false);
 
-  const prodId = () => {
-    navigate(`/product/${product.product.id}`);
-  };
+  const goToProduct = () => navigate(`/product/${product.id}`);
 
   const handleAddToCart = async () => {
     try {
-      await addToCart({ productId: product.product.id }).unwrap();
-      alert('Product added to cart successfully');
+      await addToCart({ productId: product.id }).unwrap();
+      setIsAdded(true);
+      setTimeout(() => setIsAdded(false), 700);
     } catch (error) {
-      console.error('Failed to add product to cart:', error);
+      console.error("Failed to add product to cart:", error);
     }
   };
 
   return (
-    <div className={styles.productCard}>
-      <div className={styles.imageContainer}>
+    <div className={styles.card}>
+      <div className={styles.imageBox} onClick={goToProduct}>
         <img
-          onClick={prodId}
-          src={`${BASE_URL}${product.product.avatarUrl}`}
-          alt={product.product.title}
+          className={styles.productImage}
+          src={`${BASE_URL}${product.avatarUrl}`}
+          alt={product.title}
         />
       </div>
-      <button onClick={prodId}>
-        <h3 className={styles.h3}>{product.product.title}</h3>
-      </button>
-      <div className={styles.boxIntormation}>
-        <p className={styles.price}>{product.product.price} ₽</p>
-        <p className={styles.divP2}>{product.product.description}</p>
+
+      <div className={styles.titleButton} onClick={goToProduct}>
+        <h3 className={styles.title}>{product.title}</h3>
       </div>
-      <button onClick={handleAddToCart}>Добавить в корзину</button>
+
+      <div className={styles.details}>
+        <div className={styles.priceText}>{product.price} ₽</div>
+        <p className={styles.description}>{product.description}</p>
+      </div>
+
+      <button
+        className={`${styles.cartButton} ${isAdded ? styles.added : ""}`}
+        onClick={handleAddToCart}
+        disabled={isAdded}
+      >
+        {isAdded ? "Товар добавлен в корзину" : "Добавить в корзину"}
+      </button>
     </div>
   );
 };
